@@ -1,6 +1,6 @@
 import { times } from "../util/times.js";
 
-export function zip<T>(...arrays: (readonly T[])[]): T[][] {
+export function zip<T>(...arrays: readonly (readonly T[])[]): T[][] {
   if (arrays.length === 0) {
     return [];
   }

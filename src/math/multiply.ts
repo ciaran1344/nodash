@@ -1,3 +1,3 @@
-export function multiply(...values: number[]): number {
+export function multiply(...values: readonly number[]): number {
   return values.reduce((acc, value) => acc * value, 1);
 }

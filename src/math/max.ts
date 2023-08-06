@@ -1,6 +1,7 @@
+import { identity } from "../util/identity.js";
+
+import { maxBy } from "./maxBy.js";
+
 export function max(values: readonly number[]): number | undefined {
-  return values.reduce<number | undefined>(
-    (acc, value) => (acc === undefined || value > acc ? value : acc),
-    undefined,
-  );
+  return maxBy(values, identity);
 }

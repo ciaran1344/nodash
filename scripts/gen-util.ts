@@ -1,4 +1,5 @@
 import { accessSync, writeFileSync } from "fs";
+
 import * as Lodash from "lodash-es";
 
 import { upperFirst } from "../src/string/upperFirst.js";
