@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "lib": ["DOM", "ES2022"],
-    "module": "ES2022",
+    "lib": ["DOM", "ESNext"],
+    "module": "ESNext",
     "moduleResolution": "NodeNext",
     "noImplicitAny": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
     "strict": true,
+    "target": "ESNext",
     "types": ["node"]
   },
   "include": ["*.ts", "scripts", "src", "test"]

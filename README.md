@@ -2,13 +2,69 @@
 
 Nodash is a native ESM implementation of the [Lodash](https://lodash.com) API.
 
-Motivations:
+## Installing
 
-TODO:
+TODO
 
-1.  Immutability
-1.  Happy case
-1.  Native API calls
+## Motivations
+
+### Native API Calls
+
+Lodash uses _custom implementations_ of modern browser APIs, which is great for projects targeting older versions of ECMAScript **without** a build process.
+
+However, most modern JS projects implement some build pipeline, where high-level JS constructs are downleveled to an older target (e.g. `ES6`) at build time.
+
+In contrast, Nodash leverages bleeding edge native API implementations where available:
+
+```ts
+export const toPairs = Object.entries;
+```
+
+This allows each project to individually target as high a JS target as necessary, taking advantage of native browser API calls and their superior debugging experience.
+
+### Happy Case First
+
+Lodash is highly tolerant to nullish input, which can be a benefit for JS projects without strong static typing.
+
+However, this can be a frustrating source of bugs, where `undefined` or `null` data sources are silently handled.
+
+```ts
+_.forEach(undefined, (i) => console.log(i));
+// *crickets*
+```
+
+It's also often a source of unnecessary inefficiency, where nil checks need to be run before iterating your well-behaved data source.
+
+Nodash has a truthy API, where methods expect a well behaved data source. This forces you to explictly guard your input data.
+
+```ts
+Nodash.forEach(undefined, (i) => console.log(i));
+// Uncaught TypeError: Cannot read properties of undefined (reading 'forEach')
+```
+
+### Immutability
+
+Many of Lodash's methods are mutable, meaning that they perform in-place operations on their data source.
+
+```ts
+const myArray = [1, 2, 3];
+
+console.log(_.reverse(myArray)); // => [3, 2, 1]
+console.log(myArray); // => [3, 2, 1]
+```
+
+Nodash has an immutable-first API, unless the method expliclty declares otherwise.
+
+```ts
+const myArray = [1, 2, 3];
+
+console.log(Nodash.reverse(myArray)); // => [3, 2, 1]
+console.log(myArray); // => [1, 2, 3]
+```
+
+### First Class TypeScript Support
+
+Nodash is written in [TypeScript](https://www.typescriptlang.org), and ships with its own type definitions. No need for `@types/nodash`!
 
 ## Lodash API Checklist
 
@@ -70,8 +126,8 @@ The following table lists all methods of the Lodash API, along with their Nodash
 | ~~each~~          | ✅           |         |           |
 | ~~eachRight~~     | ✅           |         |           |
 | endsWith          | ✅           |         |           |
-| entries           |              |         |           |
-| entriesIn         |              |         |           |
+| ~~entries~~       | ✅           |         |           |
+| ~~entriesIn~~     |              |         |           |
 | eq                | ✅           |         |           |
 | escape            |              |         |           |
 | escapeRegExp      |              |         |           |

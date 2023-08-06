@@ -12,7 +12,7 @@
   "scripts": {
     "build": "npm run clean && npm run format && npm run lint && npm run test && npm run bundle",
     "bundle": "tsc --project tsconfig.build.json",
-    "clean": "rm -rf dist",
+    "clean": "rm -rf coverage dist",
     "format": "prettier --write *.json *.md *.ts scripts src test",
     "gen-util": "tsx scripts/gen-util",
     "lint": "eslint --ext .ts *.ts scripts src test --fix",
