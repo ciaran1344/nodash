@@ -13,10 +13,10 @@
     "build": "npm run clean && npm run format && npm run lint && npm run test && npm run bundle",
     "bundle": "tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
-    "format": "prettier --write *.json *.md scripts src test",
+    "format": "prettier --write *.json *.md *.ts scripts src test",
     "gen-util": "tsx scripts/gen-util",
-    "lint": "eslint --ext .ts scripts src test --fix",
-    "test": "vitest",
+    "lint": "eslint --ext .ts *.ts scripts src test --fix",
+    "test": "vitest --config ./vitest.config.ts --coverage",
     "type-check": "tsc --noEmit"
   },
   "devDependencies": {
@@ -24,6 +24,7 @@
     "@types/node": "20.4.6",
     "@typescript-eslint/eslint-plugin": "6.1.0",
     "@typescript-eslint/parser": "6.1.0",
+    "@vitest/coverage-v8": "0.34.1",
     "eslint": "8.45.0",
     "eslint-import-resolver-typescript": "3.5.5",
     "eslint-plugin-import": "2.28.0",

@@ -9,5 +9,5 @@
     "strict": true,
     "types": ["node"]
   },
-  "include": ["scripts", "src", "test"]
+  "include": ["*.ts", "scripts", "src", "test"]
 }
