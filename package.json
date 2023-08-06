@@ -1,0 +1,35 @@
+{
+  "name": "nodash",
+  "version": "0.0.0",
+  "description": "A native Lodash alternative written in TypeScript",
+  "author": "Ciarán Ingle",
+  "license": "ISC",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run format && npm run lint && npm run test && npm run bundle",
+    "bundle": "tsc --project tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "format": "prettier --check *.json *.md src test",
+    "gen-util": "tsx scripts/gen-util",
+    "lint": "eslint --ext .ts src test",
+    "test": "vitest",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "4.17.8",
+    "@types/node": "20.4.6",
+    "@typescript-eslint/eslint-plugin": "6.1.0",
+    "@typescript-eslint/parser": "6.1.0",
+    "eslint": "8.45.0",
+    "lodash-es": "4.17.21",
+    "prettier": "3.0.0",
+    "tslib": "2.6.0",
+    "tsx": "3.12.7",
+    "typescript": "5.1.6",
+    "vitest": "0.33.0"
+  }
+}
