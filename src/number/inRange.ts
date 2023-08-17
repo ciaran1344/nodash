@@ -1,4 +1,8 @@
-export function inRange(value: number, start: number | undefined = 0, end: number): boolean {
+export function inRange(
+  value: number,
+  start: number | undefined = 0,
+  end: number,
+): boolean {
   if (start < end) {
     return value >= start && value < end;
   }

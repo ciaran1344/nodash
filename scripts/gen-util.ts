@@ -25,7 +25,9 @@ if (process.argv.length < 4) {
 const [, , util, category] = process.argv as [string, string, string, string];
 
 if (!CATEGORIES.includes(category)) {
-  throw Error(`Unknown category ${category}, expected one of: ${CATEGORIES.join(", ")}`);
+  throw Error(
+    `Unknown category ${category}, expected one of: ${CATEGORIES.join(", ")}`,
+  );
 }
 if (!UTILS.includes(util)) {
   throw Error(`Unknown util ${util}, expected one of: ${UTILS.join(", ")}`);
@@ -48,10 +50,14 @@ try {
 
 const testUrl = new URL(`../test/${category}/${util}.spec.ts`, import.meta.url);
 
-const testContents = `import lodash${upperFirst(util)} from "lodash-es/${util}.js";
+const testContents = `import lodash${upperFirst(
+  util,
+)} from "lodash-es/${util}.js";
 import { describe, expect, test } from "vitest";
 
-import { ${util} as nodash${upperFirst(util)} } from "../../src/${category}/${util}.js";
+import { ${util} as nodash${upperFirst(
+  util,
+)} } from "../../src/${category}/${util}.js";
 
 describe.each([
   ["${util}", nodash${upperFirst(util)}],

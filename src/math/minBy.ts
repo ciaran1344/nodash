@@ -1,6 +1,10 @@
-export function minBy<T>(values: readonly T[], iteratee: (value: T) => number): T | undefined {
+export function minBy<T>(
+  values: readonly T[],
+  iteratee: (value: T) => number,
+): T | undefined {
   return values.reduce<T | undefined>(
-    (acc, value) => (acc === undefined || iteratee(value) < iteratee(acc) ? value : acc),
+    (acc, value) =>
+      acc === undefined || iteratee(value) < iteratee(acc) ? value : acc,
     undefined,
   );
 }

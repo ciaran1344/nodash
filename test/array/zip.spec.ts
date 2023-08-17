@@ -8,7 +8,11 @@ describe.each([
   ["_.zip", lodashZip],
 ])("%s", (_name, zip) => {
   test("should zip arrays", () => {
-    const result = zip<string | number | boolean>(["a", "b"], [1, 2], [true, false]);
+    const result = zip<string | number | boolean>(
+      ["a", "b"],
+      [1, 2],
+      [true, false],
+    );
 
     expect(result).toEqual([
       ["a", 1, true],

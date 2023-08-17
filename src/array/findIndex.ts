@@ -4,7 +4,7 @@ export function findIndex<T>(
   fromIndex = array.length - 1,
 ): number {
   for (let i = fromIndex; i < array.length; i++) {
-    if (predicate(array[i], i, array)) {
+    if (predicate(array[i]!, i, array)) {
       return i;
     }
   }
