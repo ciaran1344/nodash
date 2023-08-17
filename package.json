@@ -20,6 +20,7 @@
     "type-check": "tsc --noEmit"
   },
   "devDependencies": {
+    "@ciaran1344/tsconfig-presets": "github:ciaran1344/tsconfig-presets",
     "@types/lodash-es": "4.17.8",
     "@types/node": "20.4.6",
     "@typescript-eslint/eslint-plugin": "6.1.0",

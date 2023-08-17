@@ -1,12 +1,8 @@
 {
+  "extends": "@ciaran1344/tsconfig-presets/tsconfig-esm.json",
   "compilerOptions": {
     "lib": ["DOM", "ESNext"],
-    "module": "ESNext",
-    "moduleResolution": "NodeNext",
-    "noImplicitAny": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
-    "strict": true,
+    "skipLibCheck": true,
     "types": ["node"]
   },
   "include": ["*.ts", "scripts", "src", "test"]

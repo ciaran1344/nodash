@@ -1,9 +1,9 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["src/index.ts"],
   "compilerOptions": {
     "declaration": true,
     "outDir": "dist",
     "target": "ESNext"
-  }
+  },
+  "files": ["src/index.ts"]
 }
