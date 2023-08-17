@@ -116,7 +116,7 @@ The following table lists all methods of the Lodash API, along with their Nodash
 | defer             |              |         |           |
 | delay             |              |         |           |
 | difference        | ✅           |         |           |
-| differenceBy      |              |         |           |
+| differenceBy      | ✅           |         |           |
 | differenceWith    |              |         |           |
 | divide            | ✅           |         |           |
 | drop              |              |         |           |
@@ -358,10 +358,10 @@ The following table lists all methods of the Lodash API, along with their Nodash
 | unary             |              |         |           |
 | unescape          |              |         |           |
 | union             | ✅           |         |           |
-| unionBy           |              |         |           |
+| unionBy           | ✅           |         |           |
 | unionWith         |              |         |           |
 | uniq              | ✅           |         |           |
-| uniqBy            |              |         |           |
+| uniqBy            | ✅           |         |           |
 | uniqWith          |              |         |           |
 | uniqueId          |              |         |           |
 | unset             |              |         |           |
