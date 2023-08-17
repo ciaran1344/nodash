@@ -42,7 +42,7 @@ Nodash.forEach(undefined, (i) => console.log(i));
 // Uncaught TypeError: Cannot read properties of undefined (reading 'forEach')
 ```
 
-### Immutability
+### Immutability
 
 Many of Lodash's methods are mutable, meaning that they perform in-place operations on their data source.
 

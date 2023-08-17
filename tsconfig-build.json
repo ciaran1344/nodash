@@ -3,6 +3,7 @@
   "include": ["src/index.ts"],
   "compilerOptions": {
     "declaration": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "target": "ESNext"
   }
 }

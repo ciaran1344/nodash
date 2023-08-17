@@ -7,7 +7,6 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
     "strict": true,
-    "target": "ESNext",
     "types": ["node"]
   },
   "include": ["*.ts", "scripts", "src", "test"]
