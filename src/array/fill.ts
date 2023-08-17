@@ -4,5 +4,5 @@ export function fill<T>(
   start?: number,
   end?: number,
 ): T[] {
-  return Array.from(array).fill(value, start, end);
+  return [...array].fill(value, start, end);
 }

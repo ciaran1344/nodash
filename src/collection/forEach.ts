@@ -2,11 +2,11 @@ export function forEach<T extends object>(
   collection: T,
   interatee: (value: T[keyof T], key: string, collection: T) => void,
 ): void {
-  (Object.entries(collection) as [string, T[keyof T]][]).forEach(
-    ([key, value]) => {
-      interatee(value, key, collection);
-    },
-  );
+  const keyValues = Object.entries(collection) as [string, T[keyof T]][];
+
+  for (const [key, value] of keyValues) {
+    interatee(value, key, collection);
+  }
 }
 
 export {
